@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js gallery</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2>My gallery</h2>
+        <button id="openGallery">gallery</button>
+    </div>
+	<script src="main.js"></script>
+    <script>
+        let sampleImagesList = [];
+        for (let i = 1; i <= 9; i++) {
+            sampleImagesList.push({
+                src: `images/pic (${i}).jpg`,
+                thumb: `images/pic (${i}).jpg`,
+                caption: `images/pic (${i}).jpg`,
+            });
+        }
+
+        const galleryData = {
+            title: "Sample gallery",
+            images: sampleImagesList
+        };
+
+        // Initialize the object when the button is clicked
+        document.getElementById('openGallery').addEventListener('click', function() {
+            const galleryObj = new gallery(galleryData);
+            galleryObj.show();
+        });
+    </script>
+  
+</body>
+</html>
